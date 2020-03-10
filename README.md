@@ -5,6 +5,7 @@ This is a try to create universal website for D&D players.
 ...Planning right now...
 
 # Technologies
+- Java 8
 - Spring Framework 4
 - Spring MVC
 - Hibernate 5
