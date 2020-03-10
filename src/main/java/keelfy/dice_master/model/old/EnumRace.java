@@ -1,4 +1,4 @@
-package keelfy.dice_master.model;
+package keelfy.dice_master.model.old;
 
 /**
  * @author keelfy

@@ -35,6 +35,10 @@
         <property name="annotatedClasses">
             <list>
                 <value>keelfy.dice_master.model.Race</value>
+                <value>keelfy.dice_master.model.Language</value>
+                <value>keelfy.dice_master.model.CharacterClass</value>
+                <value>keelfy.dice_master.model.Ability</value>
+                <value>keelfy.dice_master.model.Attribute</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -46,13 +50,25 @@
         </property>
     </bean>
 
-    <!--RaceDao and RaceService beans-->
-    <bean id="raceDao" class="keelfy.dice_master.repository.RaceDaoImpl">
+    <!-- UTF-8 support -->
+
+
+    <!-- RaceRepository and RaceService beans -->
+    <bean id="raceRepository" class="keelfy.dice_master.repository.impl.RaceRepositoryImpl">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="raceService" class="keelfy.dice_master.service.RaceServiceImpl">
-        <property name="raceDao" ref="raceDao"/>
+    <bean id="raceService" class="keelfy.dice_master.service.impl.RaceServiceImpl">
+        <property name="raceRepository" ref="raceRepository"/>
+    </bean>
+
+    <!-- ClassRepository and ClassService beans -->
+    <bean id="classRepository" class="keelfy.dice_master.repository.impl.ClassRepositoryImpl">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="classService" class="keelfy.dice_master.service.impl.ClassServiceImpl">
+        <property name="classRepository" ref="classRepository"/>
     </bean>
 
     <context:component-scan base-package="keelfy.dice_master"/>

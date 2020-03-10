@@ -1,6 +1,7 @@
-package keelfy.dice_master.repository;
+package keelfy.dice_master.repository.impl;
 
 import keelfy.dice_master.model.Race;
+import keelfy.dice_master.repository.RaceRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -15,9 +16,9 @@ import java.util.List;
  * @author keelfy
  */
 @Repository
-public class RaceDaoImpl implements RaceDao {
+public class RaceRepositoryImpl implements RaceRepository {
 
-    private static final Logger logger = LoggerFactory.getLogger(RaceDaoImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(RaceRepositoryImpl.class);
 
     private SessionFactory sessionFactory;
 

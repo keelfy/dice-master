@@ -42,22 +42,22 @@ public class RaceController {
         return "redirect:/races";
     }
 
-    @RequestMapping(value = "/remove/{id}")
+    @RequestMapping(value = "/races/remove/{id}")
     public String removeRace(@PathVariable("id") int id) {
         this.raceService.removeRace(id);
         return "redirect:/races";
     }
 
-    @RequestMapping(value = "/edit/{id}")
+    @RequestMapping(value = "/races/edit/{id}")
     public String editRace(@PathVariable("id") int id, Model model) {
         model.addAttribute("race", this.raceService.getRace(id));
         model.addAttribute("listRaces", this.raceService.listRaces());
         return "races";
     }
 
-    @RequestMapping(value = "raceData/{id}")
+    @RequestMapping(value = "/raceInfo/{id}")
     public String raceData(@PathVariable("id") int id, Model model) {
         model.addAttribute("race", this.raceService.getRace(id));
-        return "raceData";
+        return "raceInfo";
     }
 }

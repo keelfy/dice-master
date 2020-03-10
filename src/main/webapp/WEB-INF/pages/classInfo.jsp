@@ -1,18 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
 
 <html>
 <head>
-    <title>Race Data</title>
-
+    <title>Class Information</title>
+    <meta charset="utf-8">
     <style type="text/css">
         .tg {
             border-collapse: collapse;
             border-spacing: 0;
             border-color: #ccc;
+            table-layout: fixed;
         }
 
         .tg td {
@@ -40,6 +40,7 @@
             border-color: #ccc;
             color: #333;
             background-color: #f0f0f0;
+            word-wrap: break-spaces;
         }
 
         .tg .tg-4eph {
@@ -49,18 +50,20 @@
 
 </head>
 <body>
-<h1>Book Details</h1>
+<h1>Class Details</h1>
 
 <table class="tg">
     <tr>
         <th width="60">ID</th>
-        <th width="120">Title</th>
-        <th width="60">Author</th>
+        <th width="120">Name</th>
+        <th width="120">Description</th>
+        <th width="60">Hit Dice</th>
     </tr>
     <tr>
-        <td>${race.id}</td>
-        <td>${race.name}</td>
-        <td>${race.basicSpeed}</td>
+        <td>${clazz.id}</td>
+        <td>${clazz.name}</td>
+        <td>${clazz.description}</td>
+        <td>k${clazz.hitDice}</td>
     </tr>
 </table>
 </body>

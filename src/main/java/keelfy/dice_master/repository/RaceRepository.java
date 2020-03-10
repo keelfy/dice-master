@@ -7,7 +7,7 @@ import keelfy.dice_master.model.Race;
 /**
  * @author keelfy
  */
-public interface RaceDao {
+public interface RaceRepository {
 
     public void addRace(Race race);
 
