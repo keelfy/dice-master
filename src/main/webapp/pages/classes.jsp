@@ -6,53 +6,14 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="false" %>
 
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
     <title>Classes</title>
-    <meta charset="utf-8">
-    <style type="text/css">
-        .tg {
-            border-collapse: collapse;
-            border-spacing: 0;
-            border-color: #ccc;
-            table-layout: fixed;
-        }
-
-        .tg td {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            padding: 10px 5px;
-            border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #ccc;
-            color: #333;
-            background-color: #fff;
-        }
-
-        .tg th {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: normal;
-            padding: 10px 5px;
-            border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #ccc;
-            color: #333;
-            background-color: #f0f0f0;
-            word-wrap: break-spaces;
-        }
-
-        .tg .tg-4eph {
-            background-color: #f9f9f9
-        }
-    </style>
 </head>
 <body>
-<a href="../../index.jsp">Back</a>
+<a href="../index.jsp">Back</a>
 
 <br/>
 <br/>
@@ -70,7 +31,7 @@
         </tr>
         <c:forEach items="${listClasses}" var="clazz">
             <tr>
-                <td><a href="/classInfo/s${clazz.id}" target="_blank">${clazz.name}</a></td>
+                <td><a href="/classes/info/${clazz.id}" target="_blank">${clazz.name}</a></td>
                 <td>${clazz.description}</td>
                 <td>k${clazz.hitDice}</td>
                 <td><a href="<c:url value='/classes/edit/${clazz.id}'/>">Edit</a></td>

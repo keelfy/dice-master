@@ -55,7 +55,6 @@ public class ClassRepositoryImpl implements ClassRepository {
         Session session = this.sessionFactory.getCurrentSession();
         CharacterClass characterClass = session.load(CharacterClass.class, new Integer(id));
         logger.info("Class successfully loaded. Details: " + characterClass);
-        System.out.println(characterClass);
         return characterClass;
     }
 

@@ -23,7 +23,7 @@ public class Race {
     private String description;
 
     @Column(name = "SPEED")
-    private int basicSpeed;
+    private int speedModifier;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "race_languages", joinColumns = @JoinColumn(name = "RACE_ID", referencedColumnName = "ID"))
@@ -66,12 +66,12 @@ public class Race {
         this.description = description;
     }
 
-    public int getBasicSpeed() {
-        return basicSpeed;
+    public int getSpeedModifier() {
+        return speedModifier;
     }
 
-    public void setBasicSpeed(int basicSpeed) {
-        this.basicSpeed = basicSpeed;
+    public void setSpeedModifier(int speedModifier) {
+        this.speedModifier = speedModifier;
     }
 
     public List<Integer> getLanguages() {
@@ -103,7 +103,7 @@ public class Race {
         return "Race{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", basicSpeed=" + basicSpeed +
+                ", basicSpeed=" + speedModifier +
                 ", languages=" + languages +
                 ", attributeBonuses=" + attributeBonuses +
                 ", abilityBonuses=" + abilityBonuses +
