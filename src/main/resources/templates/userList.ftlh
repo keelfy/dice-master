@@ -1,0 +1,25 @@
+<#import "part/_page.ftlh" as c>
+
+<@c.page>
+    <h1>List of users</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Roles</th>
+            <th>Created At</th>
+            <th></th>
+        </tr>
+        </thead>
+    <#list users as user>
+        <tr>
+            <td>${user.username}</td>
+            <td><#list user.roles as role>${role}<#sep>,</#list></td>
+            <td>${user.createdAt.toString()}</td>
+            <td><a href="/user/${user.id}">Edit</a></td>
+        </tr>
+    </#list>
+    </table>
+
+</@c.page>

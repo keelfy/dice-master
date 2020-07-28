@@ -1,6 +1,6 @@
 package keelfy.dice_master.repository;
 
-import keelfy.dice_master.model.character.race.Race;
+import keelfy.dice_master.model.Visit;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
  * @author keelfy
  */
 @Repository
-public interface RaceRepository extends CrudRepository<Race, Long> {
-    Race findByName(String name);
-}
+public interface VisitRepository extends CrudRepository<Visit, Long> {}
